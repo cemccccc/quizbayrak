@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class CustomElevatedButton extends StatelessWidget {
-  const CustomElevatedButton(
-      {Key? key, required this.title, required this.widget})
+class CustomElevatedButton2 extends StatelessWidget {
+  const CustomElevatedButton2(
+      {Key? key, required this.title2, required this.widget2})
       : super(key: key);
 
-  final String title;
-  final Widget widget;
+  final String title2;
+  final Widget widget2;
 
   @override
   Widget build(BuildContext context) {
@@ -15,10 +15,10 @@ class CustomElevatedButton extends StatelessWidget {
       height: MediaQuery.of(context).size.height * 0.065,
       child: ElevatedButton(
         onPressed: () async {
-          await elevatedButtonRoute(context, widget);
+          await elevatedButtonRoute(context, widget2);
         },
         child: Text(
-          title,
+          title2,
           style:
               const TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
@@ -28,7 +28,8 @@ class CustomElevatedButton extends StatelessWidget {
 }
 
 Future<T?> elevatedButtonRoute<T>(BuildContext context, Widget widget) {
-  return Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+  return Navigator.pushReplacement(context,
+      MaterialPageRoute(builder: (context) {
     return widget;
   }));
 }

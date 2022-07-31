@@ -1,3 +1,4 @@
+import 'package:bayrak_quiz/anasayfa.dart';
 import 'package:bayrak_quiz/components/buttons.dart';
 import 'package:bayrak_quiz/constants/project_constants.dart';
 import 'package:flutter/material.dart';
@@ -18,12 +19,17 @@ class _SonucEkraniState extends State<SonucEkrani> {
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Text('data'),
-            Text('data'),
-            //CustomElevatedButton(title: ProjectConstants().sonucEkraniElevated,),
-            
+            Text(
+              '3 DOĞRU 2 YANLIŞ',
+              style: Theme.of(context).textTheme.headline4,
+            ),
+            const Text('&60 BAŞARI'),
+            CustomElevatedButton(
+              title: ProjectConstants().sonucEkraniElevated,
+              widget: const AnaSayfa(),
+            ),
           ],
         ),
       ),
